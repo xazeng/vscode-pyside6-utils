@@ -1,0 +1,7 @@
+{
+  "extension.description": "Edit Qt UI files using the Python environment selected in VS Code and automatically generate PySide6 code.",
+  "workspaceTrust.description": "Requires running Qt tools from the Python environment selected for the project.",
+  "command.editUi.title": "Edit QT UI File",
+  "configuration.uic.options.description": "Arguments passed to PySide6 uic, with one argument per array element and no extra quotes. Supports path variables such as `${resourceDirname}`, `${resourceBasenameNoExtension}`, `${workspaceFolder}`, `${pathSeparator}`, and `${env:NAME}`. Relative paths are resolved against the UI file's directory.",
+  "configuration.uic.liveExecution.enabled.description": "Automatically generate Python files when .ui files are created or saved, including saves from external Designer."
+}

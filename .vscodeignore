@@ -1,0 +1,13 @@
+.git/**
+.test-tmp/**
+node_modules/**
+src/**
+test/**
+.vscode/**
+out/**/*.map
+tsconfig.json
+package-lock.json
+AGENTS*.md
+DESIGN.md
+**/__pycache__/**
+debug.log

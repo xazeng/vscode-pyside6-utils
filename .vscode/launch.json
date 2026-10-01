@@ -1,0 +1,11 @@
+{
+  "version": "0.2.0",
+  "configurations": [{
+    "name": "运行 PySide6 Utils",
+    "type": "extensionHost",
+    "request": "launch",
+    "args": ["--extensionDevelopmentPath=${workspaceFolder}"],
+    "outFiles": ["${workspaceFolder}/out/**/*.js"],
+    "preLaunchTask": "编译插件"
+  }]
+}

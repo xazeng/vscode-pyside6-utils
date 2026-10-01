@@ -1,0 +1,7 @@
+{
+  "extension.description": "使用 VS Code 所选 Python 环境编辑 Qt UI，并自动生成 PySide6 代码。",
+  "workspaceTrust.description": "需要运行项目所选 Python 环境中的 Qt 工具。",
+  "command.editUi.title": "编辑 Qt UI 文件",
+  "configuration.uic.options.description": "传给 PySide6 uic 的参数，每个元素为一个参数，无需额外引号。支持 `${resourceDirname}`、`${resourceBasenameNoExtension}`、`${workspaceFolder}`、`${pathSeparator}`、`${env:NAME}` 等路径变量。相对路径以 UI 文件目录为基准。",
+  "configuration.uic.liveExecution.enabled.description": "在 .ui 文件新建或保存时自动生成 Python 文件，包括外部 Designer 保存。"
+}

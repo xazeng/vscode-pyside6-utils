@@ -1,0 +1,52 @@
+{
+  "name": "vscode-pyside6-utils",
+  "displayName": "PySide6 Utils",
+  "description": "%extension.description%",
+  "version": "0.1.1",
+  "publisher": "xazeng",
+  "repository": { "type": "git", "url": "https://github.com/xazeng/vscode-pyside6-utils.git" },
+  "license": "MIT",
+  "engines": { "vscode": "^1.69.0" },
+  "categories": ["Other"],
+  "main": "./out/extension.js",
+  "extensionKind": ["workspace"],
+  "extensionDependencies": ["ms-python.python"],
+  "activationEvents": ["onCommand:pyside6Utils.editUi", "onStartupFinished"],
+  "capabilities": {
+    "untrustedWorkspaces": { "supported": false, "description": "%workspaceTrust.description%" },
+    "virtualWorkspaces": { "supported": false }
+  },
+  "scripts": {
+    "compile": "tsc -p .",
+    "check": "tsc -p . --noEmit",
+    "test": "npm run compile && node --test test/*.test.js",
+    "vscode:prepublish": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/node": "16.18.126",
+    "@types/vscode": "1.69.0",
+    "typescript": "5.6.3"
+  },
+  "contributes": {
+    "commands": [{ "command": "pyside6Utils.editUi", "title": "%command.editUi.title%", "category": "PySide6 Utils" }],
+    "menus": {
+      "explorer/context": [{ "command": "pyside6Utils.editUi", "when": "resourceExtname == .ui && !explorerResourceIsFolder", "group": "pyside6Utils" }],
+      "editor/context": [{ "command": "pyside6Utils.editUi", "when": "resourceExtname == .ui", "group": "pyside6Utils" }],
+      "commandPalette": [{ "command": "pyside6Utils.editUi", "when": "resourceExtname == .ui" }]
+    },
+    "configuration": {
+      "title": "PySide6 Utils",
+      "properties": {
+        "pyside6Utils.uic.options": {
+          "type": "array", "items": { "type": "string" }, "scope": "resource",
+          "default": ["-o", "${resourceDirname}${pathSeparator}${resourceBasenameNoExtension}_ui.py"],
+          "markdownDescription": "%configuration.uic.options.description%"
+        },
+        "pyside6Utils.uic.liveExecution.enabled": {
+          "type": "boolean", "default": true, "scope": "resource",
+          "description": "%configuration.uic.liveExecution.enabled.description%"
+        }
+      }
+    }
+  }
+}
